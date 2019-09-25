@@ -2,9 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Main_Page_Elements {
+public class MainPageElements {
     private WebDriver driver;
-   Main_Page_Elements (WebDriver driver){this.driver = driver;}
+   MainPageElements(WebDriver driver){this.driver = driver;}
 
    By heading = By.xpath("//h1[text()='Мои подписи']");
    By signatureButton = By.xpath("//button[contains(text(),'Получить подпись')]");
@@ -14,6 +14,7 @@ public class Main_Page_Elements {
    By emailProfile = By.xpath("//span[@class='uc-header__email ng-binding ng-scope']");
    By logotip = By.xpath("//img[@class='uc-header__logo']");
    By phone = By.xpath("//a[@class='uc-header__txt ng-binding']");
+   By formWithInformation = By.xpath("//section[@class='uc-panel uc-panel--aside']");
 
 
     public WebElement getHeading (){return driver.findElement(heading);}
@@ -24,4 +25,6 @@ public class Main_Page_Elements {
     public WebElement getEmailProfile (){return driver.findElement(emailProfile);}
     public WebElement getLogotip (){return driver.findElement(logotip);}
     public WebElement getPhone (){return driver.findElement(phone);}
+    public WebElement getFormWithInformation (){return driver.findElement(formWithInformation);}
+
 }

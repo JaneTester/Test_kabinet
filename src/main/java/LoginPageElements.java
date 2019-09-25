@@ -2,9 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Login_Page_Elements {
-    private WebDriver driver;
-    Login_Page_Elements (WebDriver driver){this.driver = driver;}
+public class LoginPageElements {
+    WebDriver driver;
+    LoginPageElements(WebDriver driver){this.driver = driver;}
 
     By inputLogin = By.xpath("//input[@name='LOGIN']");
     By inputPassword = By.xpath("//input[@name='PASS']");
