@@ -10,11 +10,12 @@ public class LoginPage extends LoginPageElements {
         super(driver);
         this.driver = driver;
     }
+LoginData loginData = new LoginData();
 
 
     public MainPage SignInAccount(WebElement login, WebElement pass, WebElement button) {
-        login.sendKeys("EIP.test@yandex.ru");
-        pass.sendKeys("IcW1jFND");
+        login.sendKeys(loginData.login);
+        pass.sendKeys(loginData.password);
         button.click();
         return new MainPage(driver);
     }
