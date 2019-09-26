@@ -34,8 +34,8 @@ public class LoginPageTest {
     }
 
     @Test
-    public void SignInAccountTest(){
-        loginPage.SignInAccount(loginElements.getLogin(),loginElements.getPassword(), loginElements.getButtonLogin());
+    public void SignInAccountTest() {
+        loginPage.SignInAccount(loginElements.getLogin(), loginElements.getPassword(), loginElements.getButtonLogin());
         String heading = mainPage.GetHeadingText(mainElements.getHeading());
         Assert.assertEquals("Мои подписи", heading);
 
@@ -53,11 +53,22 @@ public class LoginPageTest {
         String error = loginPage.GetInputErrorText(loginElements.getPassword(), loginElements.getButtonLogin(), loginElements.getPasswordError());
         Assert.assertEquals("Обязательное поле", error);
     }
+
     @Test
-    public void FormForgotPasswordTest (){
+    public void FormForgotPasswordTest() {
         String heading = loginPage.GetFormForgotPassword();
         Assert.assertEquals("Восстановление пароля", heading);
     }
+
+    @Test
+    public void NewPasswordTest() {
+        String heading = loginPage.GetNewPassword();
+        Assert.assertEquals("Мы отправили новый пароль на Вашу почту.", heading);
+    }
+@Test
+public void CloseFormTest(){
+        loginPage.GetCloseForm();
+}
 
     @After
     public void tearDown() {

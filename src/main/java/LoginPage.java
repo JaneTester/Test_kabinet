@@ -33,4 +33,20 @@ LoginData loginData = new LoginData();
         wait.until(ExpectedConditions.visibilityOfAllElements(getFormForgotPassword()));
         return getHeadingFormForgotPassword().getText();
     }
+    public String GetNewPassword (){
+        getButtonForgotPassword().click();
+        WebDriverWait wait = (new WebDriverWait(driver, 5));
+        wait.until(ExpectedConditions.visibilityOfAllElements(getFormForgotPassword()));
+        getInputEmail().sendKeys(loginData.login);
+        getButtonToSend().click();
+        WebDriverWait wait2 = (new WebDriverWait(driver, 5));
+        wait.until(ExpectedConditions.visibilityOfAllElements(getHeadingToolTip()));
+        return getHeadingToolTip().getText();
+    }
+    public void GetCloseForm (){
+        getButtonForgotPassword().click();
+        WebDriverWait wait = (new WebDriverWait(driver, 5));
+        wait.until(ExpectedConditions.visibilityOfAllElements(getFormForgotPassword()));
+        getButtonToClose().click();
+    }
 }
