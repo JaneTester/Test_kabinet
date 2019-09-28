@@ -2,10 +2,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MainPageElements {
-    private WebDriver driver;
+public class MainPageElements extends ConfirmationPopUp{
+    WebDriver driver;
 
     MainPageElements(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
@@ -24,9 +25,7 @@ public class MainPageElements {
     By positiveResultSearch = By.xpath("//div[@class='md-padding md-whiteframe-3dp uc-card ng-scope']");
     By negativeResultSearch = By.xpath("//h3[text()='Не найдено']");
     By buttonDeleteProcess = By.xpath("(//button[@aria-label='Удалить'])[1]//i");
-    By dialogWindow = By.xpath("//md-dialog[@aria-label='Вы действительно хотите ...']");
-    By buttonConfirmationOfDeletion = By.xpath("//md-dialog[@aria-label='Вы действительно хотите ...']//button[text()='Удалить']");
-    By buttonCancelDeletion = By.xpath("//md-dialog[@aria-label='Вы действительно хотите ...']//button[text()='Отмена']");
+
 
 
     public WebElement getHeading() {return driver.findElement(heading);}
@@ -44,9 +43,7 @@ public class MainPageElements {
     public WebElement getPositiveResultSearch() {return driver.findElement(positiveResultSearch);}
     public WebElement getNegativeResultSearch() {return driver.findElement(negativeResultSearch);}
     public WebElement getButtonDeleteProcess() {return driver.findElement(buttonDeleteProcess);}
-    public WebElement getDialogWindow() {return driver.findElement(dialogWindow);}
-    public WebElement getButtonConfirmationOfDeletion() {return driver.findElement(buttonConfirmationOfDeletion);}
-    public WebElement getButtonCancelDeletion() {return driver.findElement(buttonCancelDeletion);}
+
 
 
 }

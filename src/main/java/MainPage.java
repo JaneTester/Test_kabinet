@@ -2,19 +2,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends MainPageElements {
     WebDriver driver;
-    LoginPage loginPage = new LoginPage(driver);
-    LoginData loginData = new LoginData();
-    LoginPageElements loginElements = new LoginPageElements(driver);
 
     MainPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }
+
+    //LoginPage loginPage = new LoginPage(driver);
+    LoginData loginData = new LoginData();
+    //LoginPageElements loginElements = new LoginPageElements(driver);
+
 
     public String GetHeadingText(WebElement heading) {
         return heading.getText();
@@ -34,12 +38,22 @@ public class MainPage extends MainPageElements {
         WebDriverWait wait = (new WebDriverWait(driver, 5));
         wait.until(ExpectedConditions.visibilityOfAllElements(rezult));
     }
-    public void GetOnlyCompleted (){
+
+    public void GetOnlyCompleted() {
         getButtonOnlyCompleted().click();
     }
-    public  void GetDeleteProcess (){
+
+    public void GetDeleteProcess() {
         getButtonDeleteProcess().click();
         WebDriverWait wait = (new WebDriverWait(driver, 5));
         wait.until(ExpectedConditions.visibilityOfAllElements(getDialogWindow()));
+        WebElement result = getDialogWindow();
+        Actions builder = new Actions(driver);
+        Action seriesOfActions = builder
+                .moveToElement(result)
+                .click().build();
+        seriesOfActions.perform();
+        getButtonConfirmationOfDeletion().click();
+
     }
 }

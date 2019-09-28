@@ -17,6 +17,7 @@ public class MainPageTest {
     public LoginPageElements loginElements;
     public MainPageElements mainElements;
     public MainPage mainPage;
+    public ConfirmationPopUp confirmationPopUp;
 
     @Before
     public void setUp() {
@@ -29,6 +30,7 @@ public class MainPageTest {
         loginElements = new LoginPageElements(driver);
         mainElements = new MainPageElements(driver);
         mainPage = new MainPage(driver);
+        confirmationPopUp = new ConfirmationPopUp(driver);
         WebDriverWait wait = (new WebDriverWait(driver, 5));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='uc-preloader__inner']")));
         loginPage.SignInAccount(loginElements.getLogin(), loginElements.getPassword(), loginElements.getButtonLogin());
@@ -55,7 +57,7 @@ public class MainPageTest {
     @Test
     public void GetDeleteProcessTest (){
         mainPage.GetDeleteProcess();
-    }
+         }
 
 //    @After
 //    public void tearDown() {
