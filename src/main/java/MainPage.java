@@ -45,6 +45,7 @@ public class MainPage extends MainPageElements {
 
     public void GetDeleteProcess() {
         getButtonDeleteProcess().click();
+        System.out.println(getButtonDeleteProcess());
         WebDriverWait wait = (new WebDriverWait(driver, 5));
         wait.until(ExpectedConditions.visibilityOfAllElements(getDialogWindow()));
         WebElement result = getDialogWindow();
@@ -53,7 +54,21 @@ public class MainPage extends MainPageElements {
                 .moveToElement(result)
                 .click().build();
         seriesOfActions.perform();
-        getButtonConfirmationOfDeletion().click();
+       getButtonConfirmationOfDeletion().click();
+
+    }
+    public void GetCancelDeletionProcess() {
+        getButtonDeleteProcess().click();
+        System.out.println(getButtonDeleteProcess());
+        WebDriverWait wait = (new WebDriverWait(driver, 5));
+        wait.until(ExpectedConditions.visibilityOfAllElements(getDialogWindow()));
+        WebElement result = getDialogWindow();
+        Actions builder = new Actions(driver);
+        Action seriesOfActions = builder
+                .moveToElement(result)
+                .click().build();
+        seriesOfActions.perform();
+        getButtonCancelDeletion().click();
 
     }
 }

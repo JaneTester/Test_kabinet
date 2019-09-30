@@ -11,9 +11,7 @@ public class ConfirmationPopUp {
     By buttonCancelDeletion = By.xpath("//md-dialog[@aria-label='Вы действительно хотите ...']//button[text()='Отмена']");
 
 
-    public WebElement getDialogWindow() {
-    System.out.println(driver);
-    return driver.findElement(dialogWindow);}
+    public WebElement getDialogWindow() {return driver.findElement(dialogWindow);}
     public WebElement getButtonConfirmationOfDeletion() {return driver.findElement(buttonConfirmationOfDeletion);}
     public WebElement getButtonCancelDeletion() {return driver.findElement(buttonCancelDeletion);}
 }

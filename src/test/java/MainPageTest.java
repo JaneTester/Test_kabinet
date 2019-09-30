@@ -31,37 +31,47 @@ public class MainPageTest {
         mainElements = new MainPageElements(driver);
         mainPage = new MainPage(driver);
         confirmationPopUp = new ConfirmationPopUp(driver);
-        WebDriverWait wait = (new WebDriverWait(driver, 5));
+        WebDriverWait wait = (new WebDriverWait(driver, 7));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='uc-preloader__inner']")));
         loginPage.SignInAccount(loginElements.getLogin(), loginElements.getPassword(), loginElements.getButtonLogin());
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div [@class='uc-preloader__inner']")));
     }
+
     @Test
-    public void GetLegalStepOneTest (){
+    public void GetLegalStepOneTest() {
         mainPage.GetLegalStepOne();
         Assert.assertEquals("https://lk.thisisit.ru/personal/eds/legal/", driver.getCurrentUrl());
     }
+
     @Test
-    public void GetSearchCompanyValidValueTest (){
-        mainPage.GetSearchCompany("Алмаз", mainElements.getPositiveResultSearch() );
+    public void GetSearchCompanyValidValueTest() {
+        mainPage.GetSearchCompany("Алмаз", mainElements.getPositiveResultSearch());
     }
+
     @Test
-    public void GetSearchCompanyInValidValueTest (){
+    public void GetSearchCompanyInValidValueTest() {
         mainPage.GetSearchCompany("Glksfog", mainElements.getNegativeResultSearch());
     }
+
     @Test
-    public void GetOnlyCompletedTest(){
+    public void GetOnlyCompletedTest() {
         mainPage.GetOnlyCompleted();
     }
 
     @Test
-    public void GetDeleteProcessTest (){
+    public void GetDeleteProcessTest() {
         mainPage.GetDeleteProcess();
-         }
+    }
 
-//    @After
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @Test
+    public void GetCancelDeletionProcessTest() {
+        mainPage.GetCancelDeletionProcess();
+    }
+
+
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
 
 }
