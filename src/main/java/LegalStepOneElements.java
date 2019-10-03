@@ -40,6 +40,7 @@ public class LegalStepOneElements {
     By houseInputMailingAddressInput = By.xpath("//input[@name='house2']");
     By jumpByRegion = By.xpath("(//div[@class='md-virtual-repeat-scroller'])[2]");
     By jumpByCity = By.xpath("//span[text()='Город ']");
+    By errorMessage = By.xpath("//div[text()='Обязательное поле']");
 
     public WebElement getInputSearch() {return driver.findElement(inputSearch);}
     public WebElement getListRezultSearch() {return driver.findElement(listRezultSearch);}
@@ -72,4 +73,5 @@ public class LegalStepOneElements {
     public WebElement getHouseInputMailingAddressInput() {return driver.findElement(houseInputMailingAddressInput);}
     public WebElement getJumpByRegion() {return driver.findElement(jumpByRegion);}
     public WebElement getJumpByCity() {return driver.findElement(jumpByCity);}
+    public WebElement getErrorMessage() {return driver.findElement(errorMessage);}
 }

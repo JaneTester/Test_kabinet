@@ -78,5 +78,8 @@ public class LegalStepOne extends LegalStepOneElements {
         wait.until(ExpectedConditions.elementToBeClickable(getButtonClearInput()));
         getButtonClearInput().click();
     }
+    public void GetManualInput(){
+        getButtonEnterDataManually().click();
+    }
 
 }

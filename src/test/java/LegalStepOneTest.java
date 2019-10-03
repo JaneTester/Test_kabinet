@@ -72,6 +72,10 @@ public class LegalStepOneTest {
         legalStepOne.GetClearInput("Привет");
     }
 
+    @Test
+    public void GetManualInputTest(){
+        legalStepOne.GetManualInput();
+    }
 
 
 //    @After
