@@ -4,15 +4,20 @@ import org.openqa.selenium.WebElement;
 
 public class LegalStepOneElements {
     WebDriver driver;
-    LegalStepOneElements(WebDriver driver){this.driver = driver;}
+
+    LegalStepOneElements(WebDriver driver) {
+        this.driver = driver;
+    }
+
     By inputSearch = By.xpath("//input[@type='search']");
+    By listRezultSearch = By.xpath("(//span[@md-highlight-text='_ctrl.searchCompanyText'])[1]");
     By buttonEnterDataManually = By.xpath("//button[contains(@class,'md-accent')]");
     By buttonClearInput = By.xpath("//button[@aria-label='Clear Input']");
-    By companyDetails = By.xpath("//h3[text()='Реквизиты организации']");
-    By managerDetails = By.xpath("//h3[text()='Данные руководителя']");
-    By legalAddress = By.xpath("//h3[text()='Юридический адрес']");
-    By bankDetails = By.xpath("//h3[text()='Банковские реквизиты']");
-    By furtherButton = By.xpath("//button[contains(text(), 'Далее')]");
+    By headingCompanyDetails = By.xpath("//h3[text()='Реквизиты организации']");
+    By headingManagerDetails = By.xpath("//h3[text()='Данные руководителя']");
+    By headingLegalAddress = By.xpath("//h3[text()='Юридический адрес']");
+    By headingBankDetails = By.xpath("//h3[text()='Банковские реквизиты']");
+    By buttonFurther = By.xpath("//button[contains(text(), 'Далее')]");
     By fullNameInput = By.xpath("//input[@name='fullName']");
     By shortNameInput = By.xpath("//input[@name='shortName']");
     By innInput = By.xpath("//input[@name='inn']");
@@ -26,17 +31,25 @@ public class LegalStepOneElements {
     By cityInput = By.xpath("//input[@name='ucCity']");
     By streetInput = By.xpath("//input[@name='street']");
     By houseInput = By.xpath("//input[@name='house']");
+    By checkboxMailingAddress = By.xpath("//md-checkbox[@data-ng-change='_ctrl.changeEqualAddress()']");
+    By headingMailingAddress = By.xpath("//h3[text()='Почтовый адрес']");
+    By postalCodeMailingAddressInput = By.xpath("//input[@name='postalCode2']");
+    By regionInputMailingAddressInput = By.xpath("//input[@name='ucRegion2']");
+    By cityInputMailingAddressInput = By.xpath("//input[@name='ucCity2']");
+    By streetInputMailingAddressInput = By.xpath("//input[@name='street2']");
+    By houseInputMailingAddressInput = By.xpath("//input[@name='house2']");
     By jumpByRegion = By.xpath("(//div[@class='md-virtual-repeat-scroller'])[2]");
     By jumpByCity = By.xpath("//span[text()='Город ']");
 
     public WebElement getInputSearch() {return driver.findElement(inputSearch);}
+    public WebElement getListRezultSearch() {return driver.findElement(listRezultSearch);}
     public WebElement getButtonEnterDataManually() {return driver.findElement(buttonEnterDataManually);}
-    public WebElement getButtonClearInput(){return driver.findElement(buttonClearInput);}
-    public WebElement getCompanyDetails() {return driver.findElement(companyDetails);}
-    public WebElement getManagerDetails() {return driver.findElement(managerDetails);}
-    public WebElement getLegalAddress() {return driver.findElement(legalAddress);}
-    public WebElement getBankDetails() {return driver.findElement(bankDetails);}
-    public WebElement getFurtherButton() {return driver.findElement(furtherButton);}
+    public WebElement getButtonClearInput() {return driver.findElement(buttonClearInput);}
+    public WebElement getHeadingCompanyDetails() {return driver.findElement(headingCompanyDetails);}
+    public WebElement getHeadingManagerDetails() {return driver.findElement(headingManagerDetails);}
+    public WebElement getHeadingLegalAddress() {return driver.findElement(headingLegalAddress);}
+    public WebElement getHeadingBankDetails() {return driver.findElement(headingBankDetails);}
+    public WebElement getButtonFurther() {return driver.findElement(buttonFurther);}
     public WebElement getFullNameInput() {return driver.findElement(fullNameInput);}
     public WebElement getShortNameInput() {return driver.findElement(shortNameInput);}
     public WebElement getInnInput() {return driver.findElement(innInput);}
@@ -50,6 +63,13 @@ public class LegalStepOneElements {
     public WebElement getCityInput() {return driver.findElement(cityInput);}
     public WebElement getStreetInput() {return driver.findElement(streetInput);}
     public WebElement getHouseInput() {return driver.findElement(houseInput);}
+    public WebElement getCheckboxMailingAddress() {return driver.findElement(checkboxMailingAddress);}
+    public WebElement getHeadingMailingAddress() {return driver.findElement(headingMailingAddress);}
+    public WebElement getPostalCodeMailingAddressInput() {return driver.findElement(postalCodeMailingAddressInput);}
+    public WebElement getRegionInputMailingAddressInput() {return driver.findElement(regionInputMailingAddressInput);}
+    public WebElement getCityInputMailingAddressInput() {return driver.findElement(cityInputMailingAddressInput);}
+    public WebElement getStreetInputMailingAddressInput() {return driver.findElement(streetInputMailingAddressInput);}
+    public WebElement getHouseInputMailingAddressInput() {return driver.findElement(houseInputMailingAddressInput);}
     public WebElement getJumpByRegion() {return driver.findElement(jumpByRegion);}
     public WebElement getJumpByCity() {return driver.findElement(jumpByCity);}
 }

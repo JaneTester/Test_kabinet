@@ -55,8 +55,8 @@ public class MainPage extends MainPageElements {
                 .click().build();
         seriesOfActions.perform();
        getButtonConfirmationOfDeletion().click();
-
     }
+
     public void GetCancelDeletionProcess() {
         getButtonDeleteProcess().click();
         System.out.println(getButtonDeleteProcess());
