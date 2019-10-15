@@ -12,7 +12,7 @@ public class CompanyData {
     public String managementPost;
     public String managementName;
     public String managementBasis;
-    public String postalCodeword;
+    public String postalCode;
     public String region;
     public String city;
     public String street;
@@ -38,7 +38,7 @@ public class CompanyData {
             managementPost = (String) jsonObject.get("ManagementPost");
             managementName = (String) jsonObject.get("ManagementName");
             managementBasis = (String) jsonObject.get("ManagementBasis");
-            postalCodeword = (String) jsonObject.get("PostalCodeword");
+            postalCode = (String) jsonObject.get("PostalCode");
             region = (String) jsonObject.get("Region");
             city = (String) jsonObject.get("City");
             street = (String) jsonObject.get("Street");

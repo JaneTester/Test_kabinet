@@ -41,40 +41,47 @@ public class LegalStepOneTest {
     }
 
     @Test
-    public void GetSearchCompanyTest(){
-      legalStepOne.GetSearchCompany("Sidenis");
-        Assert.assertEquals("Реквизиты организации",legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingCompanyDetails()));
-        Assert.assertEquals("Данные руководителя",legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingManagerDetails()));
-        Assert.assertEquals("Юридический адрес",legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingLegalAddress()));
-        Assert.assertEquals("Банковские реквизиты",legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingBankDetails()));
+    public void GetSearchCompanyTest() {
+        legalStepOne.GetSearchCompany("Sidenis");
+        Assert.assertEquals("Реквизиты организации", legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingCompanyDetails()));
+        Assert.assertEquals("Данные руководителя", legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingManagerDetails()));
+        Assert.assertEquals("Юридический адрес", legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingLegalAddress()));
+        Assert.assertEquals("Банковские реквизиты", legalStepOne.GetHeadingInformationOfCompany(legalStepOneElements.getHeadingBankDetails()));
     }
 
     @Test
-    public void GetCheckFieldValueInformationTest(){
+    public void GetCheckFieldValueInformationTest() {
         legalStepOne.GetCheckFieldValueInformation();
     }
 
     @Test
-    public void GetMailingAddressTest (){
+    public void GetMailingAddressTest() {
         legalStepOne.GetMailingAddress();
         Assert.assertEquals("Почтовый адрес", legalStepOneElements.getHeadingMailingAddress().getText());
     }
 
     @Test
-    public void GetSignatureSelectionTest(){
+    public void GetSignatureSelectionTest() {
         legalStepOne.GetSignatureSelection();
         WebDriverWait wait = (new WebDriverWait(driver, 7));
         wait.until(ExpectedConditions.visibilityOf(legalStepTwoElements.getHeadingLegalStepTwo()));
         Assert.assertEquals("Выбор подписи", legalStepTwoElements.getHeadingLegalStepTwo().getText());
     }
+
     @Test
-    public void GetClearInputTest(){
+    public void GetClearInputTest() {
         legalStepOne.GetClearInput("Привет");
     }
 
     @Test
-    public void GetManualInputTest(){
-        legalStepOne.GetManualInput();
+    public void GetManualInputTest() {
+        legalStepOne.GetManualInputMain();
+        legalStepOne.GetManualInputRegion();
+        legalStepOne.GetManualInputCity();
+        legalStepOne.getButtonFurther().click();
+        WebDriverWait wait = (new WebDriverWait(driver, 7));
+        wait.until(ExpectedConditions.visibilityOf(legalStepTwoElements.getHeadingLegalStepTwo()));
+        Assert.assertEquals("Выбор подписи", legalStepTwoElements.getHeadingLegalStepTwo().getText());
     }
 
 

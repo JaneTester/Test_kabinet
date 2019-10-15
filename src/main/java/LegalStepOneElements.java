@@ -38,8 +38,8 @@ public class LegalStepOneElements {
     By cityInputMailingAddressInput = By.xpath("//input[@name='ucCity2']");
     By streetInputMailingAddressInput = By.xpath("//input[@name='street2']");
     By houseInputMailingAddressInput = By.xpath("//input[@name='house2']");
-    By jumpByRegion = By.xpath("(//div[@class='md-virtual-repeat-scroller'])[2]");
-    By jumpByCity = By.xpath("//span[text()='Город ']");
+    By jumpByRegion = By.xpath("(//div[@class='md-virtual-repeat-scroller']//ul)[2]");
+    By jumpByCity = By.xpath("(//div[@class='md-virtual-repeat-scroller']//ul)[3]");
     By errorMessage = By.xpath("//div[text()='Обязательное поле']");
 
     public WebElement getInputSearch() {return driver.findElement(inputSearch);}
